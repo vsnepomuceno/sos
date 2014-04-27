@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>SoS</title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />    
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <script type="text/javascript" charset="utf-8" src="js/cordova.js"></script>
+   <script type="text/javascript" charset="utf-8" src="js/jquery-1.11.0.min.js"></script>
+   <script type="text/javascript" charset="utf-8" src="js/jquery.mobile-1.4.2.min.js"></script>
+   <script type="text/javascript" charset="utf-8" src="js/services.js"></script>
+   <link rel="stylesheet" type="text/css" href="js/css/jquery.mobile-1.4.2.min.css" />
+   <link rel="stylesheet" type="text/css" href="css/services.css" />
+
+</head>
+<body>
+  <form action="">
+     <label for="text-basic">Descrição:</label>
+     <textarea name="txaDescription" id="txaDescription"></textarea>
+     <label for="text-basic">Valor: R$</label>
+     <input type="text" name="txtPrice" id="txtPrice" value=""></input>
+     <label for="text-basic">Tipo:</label>
+     <select id="filter-menu" data-native-menu="false">
+        <option value="tp1">Elétrico</option>
+        <option value="tp2">Doméstico</option>
+        <option value="tp3">Jardinagem</option>
+        <option value="tp4">Pintura</option>
+    </select>
+    <a href="#">Não achou o tipo de serviço? Cadastre um novo tipo!</a>
+    <hr>
+     <button class="ui-shadow ui-btn ui-corner-all" type="submit" id="btnAddService">Anunciar</button>
+     <button class="ui-shadow ui-btn ui-corner-all" type="button" id="btnCancel1" onclick="history.go(-1)">Cancelar</button>
+  </form>    
+  </body>
+</html>

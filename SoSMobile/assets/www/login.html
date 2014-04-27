@@ -10,15 +10,17 @@
    <script type="text/javascript" charset="utf-8" src="js/jquery-1.11.0.min.js"></script>
    <script type="text/javascript" charset="utf-8" src="js/jquery.mobile-1.4.2.min.js"></script>
    <link rel="stylesheet" type="text/css" href="js/css/jquery.mobile-1.4.2.min.css" />
-   
+
 </head>
 <body>
-Olá, Fulano (a)!</label>
-<p>O que você deseja fazer?</p>
-
-<a href="addService.html" class="ui-btn ui-corner-all">Anunciar meu Serviço</a>
-<a href="listServices.html" class="ui-btn ui-corner-all">Contratar um Serviço</a>
-<a href="login.html" class="ui-btn ui-corner-all">Sair</a>
-
+   <form action="index.html">
+	   <label for="text-basic">Login:</label>
+	   <input type="text" name="txtLogin" id="txtLogin" value="">
+	   <label for="text-basic">Senha:</label>
+	   <input type="password" name="txtPassword" id="txtPassworrd" value="" autocomplete="off">
+	   <button class="ui-shadow ui-btn ui-corner-all" type="submit" id="btnLogin">Entrar</button>
+	   <a href="#">Esqueceu a senha?</a>
+	   <center><img src="img/ic_fb_login.png" alt="Login com Facebook"/></center>
+   </form>
 </body>
 </html>

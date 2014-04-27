@@ -11,13 +11,18 @@ import android.view.ViewGroup;
 import org.apache.cordova.*;
 
 
+/*
+ *  A activity representa a tela da aplicação e implementa a forma como ela reagirá à interação com o usuário 
+ *  e seu conteúdo. No Android, herda de Activity, porém para utilizar o phonegap é necessário alterar a 
+ *  herança para o DroidGap
+ */
 public class MainActivity extends DroidGap {
 
     @Override
 	public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
        // setContentView(R.layout.activity_main);
-        super.loadUrl("file:///android_asset/www/index.html");
+        super.loadUrl("file:///android_asset/www/login.html");
         
     }
 
