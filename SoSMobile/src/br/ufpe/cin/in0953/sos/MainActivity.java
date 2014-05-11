@@ -22,7 +22,8 @@ public class MainActivity extends DroidGap {
 	public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
        // setContentView(R.layout.activity_main);
-        super.loadUrl("file:///android_asset/www/login.html");
+        super.setIntegerProperty("loadUrlTimeoutValue", 360000);
+        super.loadUrl("file:///android_asset/www/search.html");
         
     }
 

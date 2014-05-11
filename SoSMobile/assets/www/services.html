@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>SoS</title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />    
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <script type="text/javascript" charset="utf-8" src="js/cordova.js"></script>
+   <script type="text/javascript" charset="utf-8" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+   <script type="text/javascript" charset="utf-8" src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
+   <link rel="stylesheet" type="text/css" href="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css" />  
+   <link rel="stylesheet" type="text/css" href="css/services.css" />
+
+</head>
+
+  <body>
+  <div data-role="page" id="demo-page" data-title="Serviços" data-url="demo-page">
+    <div data-role="header" data-position="fixed" data-theme="b">
+        <h1>Resultados da Busca</h1>
+        <a href="#demo-intro" data-rel="back" data-icon="carat-l" data-iconpos="notext">Voltar</a>
+        <a href="#popupLogin" data-rel="popup" data-position-to="window" data-transition="pop" data-icon="user" data-iconpos="notext">Login</a>
+    </div><!-- /header -->
+    <div role="main" class="ui-content">
+        <ul id="list" class="touch" data-role="listview" data-icon="false" data-split-icon="delete">
+            <li>
+                <a href="#">
+                    <h3>Jardineiro</h3>
+                </a>
+                <a href="#" data-icon="carat-r">Detalhes</a>
+            </li>
+            <li>
+                <a href="#">
+                    <h3>Pedreiro</h3>
+                </a>
+                <a href="#" data-icon="carat-r">Delete</a>
+            </li>
+            <li>
+                <a href="#">
+                    <h3>Pintor</h3>
+                </a>
+                <a href="#" data-icon="carat-r">Delete</a>
+            </li>
+        </ul>
+    </div><!-- /content -->
+    <div data-role="popup" id="popupLogin" data-theme="a" class="ui-corner-all">
+    <form>
+        <div style="padding:10px 20px;">
+            <h3>Login</h3>
+            <label for="un" class="ui-hidden-accessible">Usuário:</label>
+            <input type="text" name="user" id="un" value="" placeholder="usuário" data-theme="a">
+            <label for="pw" class="ui-hidden-accessible">Senha:</label>
+            <input type="password" name="pass" id="pw" value="" placeholder="senha" data-theme="a">
+            <button type="submit" class="ui-btn ui-corner-all ui-shadow ui-btn-b ui-btn-icon-left ui-icon-check">Entrar</button>
+            <img src="img/btEntrarFacebook.png" />
+        </div>
+    </form>
+</div>
+</div>
+  </body>
+</html>
