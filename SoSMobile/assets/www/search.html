@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>SoS</title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />    
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <script type="text/javascript" charset="utf-8" src="js/cordova.js"></script>
+   <script type="text/javascript" charset="utf-8" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+   <script type="text/javascript" charset="utf-8" src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
+   <script type="text/javascript" charset="utf-8" src="js/filter-services.js"></script>
+   <link rel="stylesheet" type="text/css" href="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css" />  
+   <link rel="stylesheet" type="text/css" href="css/filter-services.css" />
+
+<script type="text/javascript">
+
+$(document).on('pagecreate', function() {	
+//	$("#txtCEP").mask("99999-999");
+	
+	$.getJSON("http://soservices.vsnepomuceno.cloudbees.net/tipo-servico", function(data) {                                                                   
+	    	if (data == null){
+	    		$('#filter-menu').append("<option value='0'>Nenhum tipo cadastrado!</option>");
+	    	}
+	    	else{
+	    		alert(data.list[0]);
+	    		var lista = data.list.tiposServicos;
+	    		var qtd = tiposServicos.length;
+	    		for (i = 0; i<1; i++){
+	    			var item = lista[i];
+		    		var html ='';
+		    		html = "<option value='" + item.id + "'>'" + "OBJ." + item.nome + "</option>";
+		            $('#filter-menu').append(html);
+		            alert(item.id);
+	    	     }
+		    }
+	        //$('#filter-menu').listview('refresh');
+	});  
+});
+</script>
+
+</head>
+
+  <body>
+  <div data-role="page" id="demo-page" data-title="Busca de Serviços" data-url="demo-page">
+  
+  <div data-role="header" data-position="fixed" data-theme="b">
+     <h1>Busca de Serviços</h1>
+     <a href="#demo-intro" data-rel="back" data-icon="carat-l" data-iconpos="notext">Voltar</a>
+     <a href="#popupLogin" data-rel="popup" data-position-to="window" data-transition="pop" data-icon="user" data-iconpos="notext">Login</a>
+  </div><!-- /header -->
+  <div class="ui-content">
+     <form>
+        <label for="filter-menu">Tipo de Serviço</label>
+        <select id="filter-menu" data-native-menu="false">
+        </select>
+       <label for="txtCEP">CEP:</label>
+       <input type="text" name="txtCEP" id="txtCEP" value="">
+        <div class="ui-field-contain">
+            <label for="slDistance">Distância</label>
+		    <select name="slDistance" id="slDistance">
+		        <option value="1">0km - 5km</option>
+		        <option value="2">5km - 10km</option>
+		        <option value="3">10km - 20km</option>
+		        <option value="4">20km - 50km</option>
+		    </select>
+		</div>
+		<a href="index.html" class="ui-btn ui-icon-search ui-btn-icon-search" type="submit">Buscar</a>
+     </form>
+    
+          
+  </div><!-- /content -->
+  
+<div data-role="popup" id="popupLogin" data-theme="a" class="ui-corner-all">
+    <form>
+        <div style="padding:10px 20px;">
+            <h3>Login</h3>
+            <label for="un" class="ui-hidden-accessible">Usuário:</label>
+            <input type="text" name="user" id="un" value="" placeholder="usuário" data-theme="a">
+            <label for="pw" class="ui-hidden-accessible">Senha:</label>
+            <input type="password" name="pass" id="pw" value="" placeholder="senha" data-theme="a">
+            <button type="submit" class="ui-btn ui-corner-all ui-shadow ui-btn-b ui-btn-icon-left ui-icon-check">Entrar</button>
+            <img src="img/btEntrarFacebook.png" />
+        </div>
+    </form>
+</div>
+
+  </div>
+  </body>
+</html>
